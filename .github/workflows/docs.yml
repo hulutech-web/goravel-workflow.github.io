@@ -1,0 +1,26 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ master ] # 只有当向 master 分支推送时才触发
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest # 指定在 Ubuntu 最新版本的操作系统上运行
+
+    steps:
+    - uses: actions/checkout@v2 # 检出代码仓库
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16 # 设置 Node.js 版本
+
+    - name: Install dependencies
+      run: npm ci # 或者使用 yarn install 如果你使用的是 Yarn
+
+    - name: Run tests
+      run: npm test # 运行测试脚本，确保你的项目中有测试脚本定义
+
+    - name: Build project
+      run: npm run build # 运行构建脚本，确保你的项目中有构建脚本定义
