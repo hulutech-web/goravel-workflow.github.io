@@ -1,6 +1,6 @@
 <template><div><h1 id="教程" tabindex="-1"><a class="header-anchor" href="#教程"><span>教程</span></a></h1>
 <h3 id="系统安装" tabindex="-1"><a class="header-anchor" href="#系统安装"><span>系统安装</span></a></h3>
-<p>审批流框架基于最新的goravel进行适配，版本号为v1.1.14，请在安装完goravel后，在进行框架集成操作。goravel安装请访问<a href="https://www.goravel.dev/zh/" target="_blank" rel="noopener noreferrer">goravel官网</a></p>
+<p>审批流框架基于最新的goravel进行适配，版本号为v1.1.14，请在安装完goravel后，在进行框架集成操作。goravel安装请访问<a href="https://www.goravel.dev/zh/" target="_blank" rel="noopener noreferrer">goravel官网</a>，使用文档：<a href="https://hulutech-web.github.io/goravel-workflow.github.io/" target="_blank" rel="noopener noreferrer">文档</a></p>
 <h4 id="_1-安装扩展" tabindex="-1"><a class="header-anchor" href="#_1-安装扩展"><span>1. 安装扩展</span></a></h4>
 <div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">go</span> get  github<span class="token punctuation">.</span>com<span class="token operator">/</span>hulutech<span class="token operator">-</span>web<span class="token operator">/</span>goravel<span class="token operator">-</span>workflow</span>
 <span class="line"></span></code></pre>
