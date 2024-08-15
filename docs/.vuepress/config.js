@@ -6,8 +6,7 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "goravel-workflow",
   description: "基于goravel的workflow审批流框架",
-  base: "/goravel-workflow/github.io/",
-  repo: 'github.com/hulutech-web/goravel-workflow.github.io',
+  base: "/goravel-workflow/", // 注意结尾的斜杠
   theme: defaultTheme({
     logo: "images/workflow.png",
     navbar: [
