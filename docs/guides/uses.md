@@ -2,7 +2,7 @@
 
 ### 系统安装
 
-审批流框架基于最新的goravel进行适配，版本号为v1.1.14，请在安装完goravel后，在进行框架集成操作。goravel安装请访问[goravel官网](https://www.goravel.dev/zh/)
+审批流框架基于最新的goravel进行适配，版本号为v1.1.14，请在安装完goravel后，在进行框架集成操作。goravel安装请访问[goravel官网](https://www.goravel.dev/zh/)，使用文档：[文档](https://hulutech-web.github.io/goravel-workflow.github.io/)
 
 #### 1. 安装扩展
 ```go
