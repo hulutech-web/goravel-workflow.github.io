@@ -1,26 +1,34 @@
-name: Build and Test
+name: VuePress Deploy
 
 on:
   push:
-    branches: [ master ] # 只有当向 master 分支推送时才触发
+    branches: [ master ] # 触发条件：当有代码推送到 master 分支时
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest # 指定在 Ubuntu 最新版本的操作系统上运行
+  build-and-deploy:
+    runs-on: ubuntu-latest # 在最新的 Ubuntu 环境中运行
 
     steps:
-    - uses: actions/checkout@v2 # 检出代码仓库
-    - name: Set up Node.js environment
+    - name: Checkout code
+      uses: actions/checkout@v2 # 检出代码
+
+    - name: Setup Node.js environment
       uses: actions/setup-node@v2
       with:
-        node-version: 16 # 设置 Node.js 版本
+        node-version: 16 # 设置 Node.js 版本为 16.x
+
+    - name: Install pnpm
+      run: |
+        npm i -g pnpm # 安装 pnpm
 
     - name: Install dependencies
-      run: npm ci # 或者使用 yarn install 如果你使用的是 Yarn
+      run: pnpm install # 使用 pnpm 安装依赖
 
-    - name: Run tests
-      run: npm test # 运行测试脚本，确保你的项目中有测试脚本定义
+    - name: Build VuePress site
+      run: pnpm run docs:build # 执行 VuePress 构建命令
 
-    - name: Build project
-      run: npm run build # 运行构建脚本，确保你的项目中有构建脚本定义
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 自动注入的 token
+        publish_dir: ./dist # VuePress 构建输出的目录
