@@ -8,7 +8,7 @@ actions:
     type: primary
 
   - text: API文档
-    link: /guides/get-started.html
+    link: /guides/uses.html
     type: secondary
 
 features:

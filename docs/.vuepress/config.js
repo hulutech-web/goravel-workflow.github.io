@@ -38,6 +38,10 @@ export default defineUserConfig({
             text: "API",
             link: "/guides/api.html",
           },
+          {
+            text: "HOOKS",
+            link: "/guides/hooks.html",
+          },
         ],
       },
       {

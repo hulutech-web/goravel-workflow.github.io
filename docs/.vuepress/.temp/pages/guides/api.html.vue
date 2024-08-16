@@ -1,7 +1,7 @@
 <template><div><h2 id="api" tabindex="-1"><a class="header-anchor" href="#api"><span>API</span></a></h2>
 <p>流程审批框架集成了有关审批设计及审批审核的API，方便开发者快速集成到现有应用中。<br>
 流程流转将根据前面流程设计，产生不同的流向，实现动态流转效果。<br>
-框架中还有其他的api接口，如需了解，请查看详情<a href="https://github.com/hulutech-web/goravel-workflow/tree/master/routes" target="_blank" rel="noopener noreferrer">API文档</a></p>
+框架中还有其他的api接口，如需了解，请查看详情<a href="https://github.com/hulutech-web/goravel-workflow/tree/master/routes" target="_blank" rel="noopener noreferrer">API路由</a></p>
 <h3 id="_1-基础" tabindex="-1"><a class="header-anchor" href="#_1-基础"><span>1. 基础</span></a></h3>
 <h4 id="部门相关" tabindex="-1"><a class="header-anchor" href="#部门相关"><span>部门相关</span></a></h4>
 <p>子部门，树形结构</p>
@@ -34,10 +34,7 @@
 <span class="line">templateCtrl <span class="token operator">:=</span> controllers<span class="token punctuation">.</span><span class="token function">NewTemplateController</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line">router<span class="token punctuation">.</span><span class="token function">Resource</span><span class="token punctuation">(</span><span class="token string">"template"</span><span class="token punctuation">,</span> templateCtrl<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js" data-title="js"><pre v-pre><code><span class="line"><span class="token comment">// 获取审批实例</span></span>
-<span class="line"><span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span>instanceId<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-流程发起" tabindex="-1"><a class="header-anchor" href="#_3-流程发起"><span>3. 流程发起</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-流程发起" tabindex="-1"><a class="header-anchor" href="#_3-流程发起"><span>3. 流程发起</span></a></h3>
 <p>发起流程时，将根据之前流程设计中选用的流程模板进行动态匹配提交字段，并根据字段类型，字段验证进行校验
 <img src="@source/.vuepress/public/images/flow_send.png" alt="发起流程"></p>
 <div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token comment">//entry节点</span></span>

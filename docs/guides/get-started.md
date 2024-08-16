@@ -7,7 +7,7 @@ golang语言开发， [goravel](https://goravel.dev "最易上手的golang语言
 goravel-workflow为golang语言量身打造的一款继承扩展应用，非常适合开发审批流程场景，面向中小企业、组织、单位提供完善的审批工作流框架，同时提供丰富的hooks回调，满足个性化需求
 框架V2版本正在陆续开发中❤️
 
-查看 [goravel-workflow](https://github.com/hulutech-web/http_result)获取更多详情。
+查看 [goravel-workflow](https://github.com/hulutech-web/goravel-workflow)获取更多详情。
 
 ## 前端
 

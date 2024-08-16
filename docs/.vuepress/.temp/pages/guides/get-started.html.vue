@@ -3,7 +3,7 @@
 <h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介"><span>简介</span></a></h2>
 <p>goravel-workflow为golang语言量身打造的一款继承扩展应用，非常适合开发审批流程场景，面向中小企业、组织、单位提供完善的审批工作流框架，同时提供丰富的hooks回调，满足个性化需求
 框架V2版本正在陆续开发中❤️</p>
-<p>查看 <a href="https://github.com/hulutech-web/http_result" target="_blank" rel="noopener noreferrer">goravel-workflow</a>获取更多详情。</p>
+<p>查看 <a href="https://github.com/hulutech-web/goravel-workflow" target="_blank" rel="noopener noreferrer">goravel-workflow</a>获取更多详情。</p>
 <h2 id="前端" tabindex="-1"><a class="header-anchor" href="#前端"><span>前端</span></a></h2>
 <p>goravel-workflow前端采用vue开发，前端代码托管在 <a href="https://github.com/hulutech-web/goravel-workflow-vue" target="_blank" rel="noopener noreferrer">https://github.com/hulutech-web/goravel-workflow-vue</a></p>
 <h2 id="详情" tabindex="-1"><a class="header-anchor" href="#详情"><span>详情</span></a></h2>

@@ -2,7 +2,7 @@
 
 流程审批框架集成了有关审批设计及审批审核的API，方便开发者快速集成到现有应用中。  
 流程流转将根据前面流程设计，产生不同的流向，实现动态流转效果。  
-框架中还有其他的api接口，如需了解，请查看详情[API文档](https://github.com/hulutech-web/goravel-workflow/tree/master/routes)
+框架中还有其他的api接口，如需了解，请查看详情[API路由](https://github.com/hulutech-web/goravel-workflow/tree/master/routes)
 
 ### 1. 基础
 
@@ -42,10 +42,7 @@ templateCtrl := controllers.NewTemplateController()
 router.Resource("template", templateCtrl)
 ```
 
-```js
-// 获取审批实例
-const instance = await api.getInstance(instanceId);
-```
+
 
 ### 3. 流程发起
 发起流程时，将根据之前流程设计中选用的流程模板进行动态匹配提交字段，并根据字段类型，字段验证进行校验
