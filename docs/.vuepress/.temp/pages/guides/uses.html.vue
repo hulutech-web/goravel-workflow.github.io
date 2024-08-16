@@ -96,6 +96,49 @@
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"><span class="token operator">...</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="员工绑定模型-user" tabindex="-1"><a class="header-anchor" href="#员工绑定模型-user"><span>员工绑定模型(user)</span></a></h3>
+<p>user模型课参考如下，其中Name,WorkNo,Password必需，可根据需要自行扩展</p>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token punctuation">{</span></span>
+<span class="line">	orm<span class="token punctuation">.</span>Model</span>
+<span class="line">	Name     <span class="token builtin">string</span>    <span class="token string">`gorm:"column:name;type:varchar(255);not null" form:"name" json:"name"`</span></span>
+<span class="line">	Avatar   <span class="token builtin">string</span>    <span class="token string">`gorm:"column:avatar;type:varchar(255);not null" form:"avatar" json:"avatar"`</span></span>
+<span class="line">	WorkNo   <span class="token builtin">string</span>    <span class="token string">`gorm:"column:workno;not null;unique_index:users_workno_unique" json:"workno" form:"workno"`</span></span>
+<span class="line">	Password <span class="token builtin">string</span>    <span class="token string">`gorm:"column:password;type:varchar(255);not null" form:"password" json:"password"`</span></span>
+<span class="line">	Email    <span class="token builtin">string</span>    <span class="token string">`gorm:"column:email;type:varchar(255);not null" form:"email" json:"email"`</span></span>
+<span class="line">	Mobile   <span class="token builtin">string</span>    <span class="token string">`gorm:"column:mobile;type:varchar(255);not null" form:"mobile" json:"mobile"`</span></span>
+<span class="line">	Gender   <span class="token builtin">int</span>       <span class="token string">`gorm:"column:gender;type:varchar(255);not null" form:"gender" json:"gender"`</span></span>
+<span class="line">	State    <span class="token builtin">int</span>       <span class="token string">`gorm:"column:state;type:varchar(255);not null" form:"state" json:"state"`</span></span>
+<span class="line">	Workflow <span class="token operator">*</span>Workflow <span class="token string">`gorm:"-"`</span></span>
+<span class="line">	orm<span class="token punctuation">.</span>SoftDeletes</span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>为了方便的集成，您可以在api.go路由下，创建资源路由，并在控制器中编写用户列表方法。</p>
+<ul>
+<li>
+<p><code v-pre>api.go</code><br>
+参考</p>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line">facades<span class="token punctuation">.</span><span class="token function">Route</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Middleware</span><span class="token punctuation">(</span>middleware<span class="token punctuation">.</span><span class="token function">Jwt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Prefix</span><span class="token punctuation">(</span><span class="token string">"/api"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Group</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span>router route<span class="token punctuation">.</span>Router<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  	userCtrl <span class="token operator">:=</span> controllers<span class="token punctuation">.</span><span class="token function">NewUserController</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">  	router<span class="token punctuation">.</span><span class="token function">Resource</span><span class="token punctuation">(</span><span class="token string">"/user"</span><span class="token punctuation">,</span> userCtrl<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p><code v-pre>user_controller.go</code>中，查询用户信息</p>
+</li>
+</ul>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">import</span> httpfacades <span class="token string">"github.com/hulutech-web/http_result"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>UserController<span class="token punctuation">)</span> <span class="token function">Index</span><span class="token punctuation">(</span>ctx http<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> http<span class="token punctuation">.</span>Response <span class="token punctuation">{</span></span>
+<span class="line">	users <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>models<span class="token punctuation">.</span>User<span class="token punctuation">{</span><span class="token punctuation">}</span></span>
+<span class="line">	queries <span class="token operator">:=</span> ctx<span class="token punctuation">.</span><span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Queries</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">	result<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> httpfacades<span class="token punctuation">.</span><span class="token function">NewResult</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">SearchByParams</span><span class="token punctuation">(</span>queries<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"excepts"</span><span class="token punctuation">}</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ResultPagination</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>users<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"Dept"</span><span class="token punctuation">}</span><span class="token operator">...</span><span class="token punctuation">)</span></span>
+<span class="line">	<span class="token keyword">return</span> result</span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>系统内置了emp模型，并提供了绑定方法，方便快速实现用户与员工的绑定</li>
+</ul>
+</div></template>
 
 

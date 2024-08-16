@@ -117,10 +117,36 @@ func (receiver *ValidationServiceProvider) rules() []validation.Rule {
 ```
 
 ### 员工绑定模型(user)
-为了方便的集成，您可以在api.go路由下，创建资源路由，并在控制器中编写用户列表方法。
-``user_controller.go``中  
-- 查询用户信息
+user模型课参考如下，其中Name,WorkNo,Password必需，可根据需要自行扩展
 ```go
+type User struct {
+	orm.Model
+	Name     string    `gorm:"column:name;type:varchar(255);not null" form:"name" json:"name"`
+	Avatar   string    `gorm:"column:avatar;type:varchar(255);not null" form:"avatar" json:"avatar"`
+	WorkNo   string    `gorm:"column:workno;not null;unique_index:users_workno_unique" json:"workno" form:"workno"`
+	Password string    `gorm:"column:password;type:varchar(255);not null" form:"password" json:"password"`
+	Email    string    `gorm:"column:email;type:varchar(255);not null" form:"email" json:"email"`
+	Mobile   string    `gorm:"column:mobile;type:varchar(255);not null" form:"mobile" json:"mobile"`
+	Gender   int       `gorm:"column:gender;type:varchar(255);not null" form:"gender" json:"gender"`
+	State    int       `gorm:"column:state;type:varchar(255);not null" form:"state" json:"state"`
+	Workflow *Workflow `gorm:"-"`
+	orm.SoftDeletes
+}
+```
+为了方便的集成，您可以在api.go路由下，创建资源路由，并在控制器中编写用户列表方法。
+- ``api.go``  
+  参考  
+  ```go
+  facades.Route().Middleware(middleware.Jwt()).Prefix("/api").Group(func(router route.Router) {
+		userCtrl := controllers.NewUserController()
+		router.Resource("/user", userCtrl)
+	})
+  ```
+  
+- ``user_controller.go``中，查询用户信息
+```go
+import httpfacades "github.com/hulutech-web/http_result"
+
 func (r *UserController) Index(ctx http.Context) http.Response {
 	users := []models.User{}
 	queries := ctx.Request().Queries()
