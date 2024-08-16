@@ -115,3 +115,18 @@ func (receiver *ValidationServiceProvider) rules() []validation.Rule {
 }
 ...
 ```
+
+### 员工绑定模型(user)
+为了方便的集成，您可以在api.go路由下，创建资源路由，并在控制器中编写用户列表方法。
+``user_controller.go``中  
+- 查询用户信息
+```go
+func (r *UserController) Index(ctx http.Context) http.Response {
+	users := []models.User{}
+	queries := ctx.Request().Queries()
+	result, _ := httpfacades.NewResult(ctx).SearchByParams(queries, []string{"excepts"}...).ResultPagination(&users, []string{"Dept"}...)
+	return result
+}
+```
+- 系统内置了emp模型，并提供了绑定方法，方便快速实现用户与员工的绑定
+
