@@ -12,7 +12,8 @@
 <ol>
 <li>定义结构体，注入服务,WorkNo,Password为必须</li>
 </ol>
-<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token punctuation">{</span></span>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">import</span> <span class="token punctuation">.</span> <span class="token string">"github.com/hulutech-web/goravel-workflow/services/workflow"</span></span>
+<span class="line"><span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token punctuation">{</span></span>
 <span class="line">	orm<span class="token punctuation">.</span>Model</span>
 <span class="line">	Name     <span class="token builtin">string</span> <span class="token string">`gorm:"column:name;type:varchar(255);not null" form:"name" json:"name"`</span></span>
 <span class="line">	Avatar   <span class="token builtin">string</span> <span class="token string">`gorm:"column:avatar;type:varchar(255);not null" form:"avatar" json:"avatar"`</span></span>
@@ -26,7 +27,7 @@
 <span class="line">	orm<span class="token punctuation">.</span>SoftDeletes</span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
 <li>定义接口，实现2个接口</li>
 </ol>
 <div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token comment">// 通知发起人，在被驳回时调用，或者整个流程结束时调用。</span></span>

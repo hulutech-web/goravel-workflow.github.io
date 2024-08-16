@@ -42,6 +42,17 @@ config := facades.Config()
 #### 2. 数据库迁移，goravel/database
 流程框架将发布的迁移sql文件，seeder填充文件，发布到该路径下，请根据需要自行修改。
 #### 3. 运行数据库迁移
+user模型与emp模型保持1:1关联。
+``databases/seeders/database_seeder.go``
+```go
+// Run executes the seeder logic.
+func (s *DatabaseSeeder) Run() error {
+	return facades.Seeder().Call([]seeder.Seeder{
+		&WorkflowDatabaseSeeder{},
+		&UserSeeder{},
+	})
+}
+```
 ```shell
 go run . artisan migrate
 ```

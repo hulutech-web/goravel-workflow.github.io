@@ -31,7 +31,17 @@
 <h4 id="_2-数据库迁移-goravel-database" tabindex="-1"><a class="header-anchor" href="#_2-数据库迁移-goravel-database"><span>2. 数据库迁移，goravel/database</span></a></h4>
 <p>流程框架将发布的迁移sql文件，seeder填充文件，发布到该路径下，请根据需要自行修改。</p>
 <h4 id="_3-运行数据库迁移" tabindex="-1"><a class="header-anchor" href="#_3-运行数据库迁移"><span>3. 运行数据库迁移</span></a></h4>
-<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go run <span class="token builtin class-name">.</span> artisan migrate</span>
+<p>user模型与emp模型保持1:1关联。
+<code v-pre>databases/seeders/database_seeder.go</code></p>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token comment">// Run executes the seeder logic.</span></span>
+<span class="line"><span class="token keyword">func</span> <span class="token punctuation">(</span>s <span class="token operator">*</span>DatabaseSeeder<span class="token punctuation">)</span> <span class="token function">Run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span></span>
+<span class="line">	<span class="token keyword">return</span> facades<span class="token punctuation">.</span><span class="token function">Seeder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Call</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>seeder<span class="token punctuation">.</span>Seeder<span class="token punctuation">{</span></span>
+<span class="line">		<span class="token operator">&amp;</span>WorkflowDatabaseSeeder<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">		<span class="token operator">&amp;</span>UserSeeder<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">	<span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go run <span class="token builtin class-name">.</span> artisan migrate</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>goravel命令将创建有关流程框架的所有表结构，默认带有测试数据，如需要查看测试数据，请运行</p>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go run <span class="token builtin class-name">.</span> artisan migrate:fresh <span class="token parameter variable">--seed</span></span>

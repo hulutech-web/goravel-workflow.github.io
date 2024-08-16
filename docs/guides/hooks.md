@@ -11,6 +11,7 @@
 - 定义关联模型，本案以User结构为例。
 1. 定义结构体，注入服务,WorkNo,Password为必须
 ```go
+import . "github.com/hulutech-web/goravel-workflow/services/workflow"
 type User struct {
 	orm.Model
 	Name     string `gorm:"column:name;type:varchar(255);not null" form:"name" json:"name"`
