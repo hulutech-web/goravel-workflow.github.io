@@ -22,7 +22,7 @@ type User struct {
 	Mobile   string `gorm:"column:mobile;type:varchar(255);not null" form:"mobile" json:"mobile"`
 	Gender   int    `gorm:"column:gender;type:varchar(255);not null" form:"gender" json:"gender"`
 	State    int    `gorm:"column:state;type:varchar(255);not null" form:"state" json:"state"`
-	Workflow *Workflow
+	Workflow *Workflow `gorm:"-"`
 	orm.SoftDeletes
 }
 ```

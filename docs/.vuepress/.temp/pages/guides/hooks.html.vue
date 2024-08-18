@@ -23,7 +23,7 @@
 <span class="line">	Mobile   <span class="token builtin">string</span> <span class="token string">`gorm:"column:mobile;type:varchar(255);not null" form:"mobile" json:"mobile"`</span></span>
 <span class="line">	Gender   <span class="token builtin">int</span>    <span class="token string">`gorm:"column:gender;type:varchar(255);not null" form:"gender" json:"gender"`</span></span>
 <span class="line">	State    <span class="token builtin">int</span>    <span class="token string">`gorm:"column:state;type:varchar(255);not null" form:"state" json:"state"`</span></span>
-<span class="line">	Workflow <span class="token operator">*</span>Workflow</span>
+<span class="line">	Workflow <span class="token operator">*</span>Workflow <span class="token string">`gorm:"-"`</span></span>
 <span class="line">	orm<span class="token punctuation">.</span>SoftDeletes</span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>

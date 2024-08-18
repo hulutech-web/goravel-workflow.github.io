@@ -1,5 +1,7 @@
 <template><div><h1 id="使用步骤" tabindex="-1"><a class="header-anchor" href="#使用步骤"><span>使用步骤</span></a></h1>
 <p>goravel-workflow由前端提供图形化页面生成执行流，<a href="https://github.com/hulutech-web/goravel-workflow-vue" target="_blank" rel="noopener noreferrer">前端框架</a>。</p>
+<h3 id="演示" tabindex="-1"><a class="header-anchor" href="#演示"><span>演示</span></a></h3>
+<p><img src="@source/.vuepress/public/images/flow_link.png" alt="流程"></p>
 <h3 id="定义模板" tabindex="-1"><a class="header-anchor" href="#定义模板"><span>定义模板</span></a></h3>
 <p><img src="@source/.vuepress/public/images/flow_dashboard.png" alt="流程"></p>
 <h4 id="模板定义" tabindex="-1"><a class="header-anchor" href="#模板定义"><span>模板定义</span></a></h4>

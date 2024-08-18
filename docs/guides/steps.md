@@ -1,6 +1,10 @@
 # 使用步骤
 
 goravel-workflow由前端提供图形化页面生成执行流，[前端框架](https://github.com/hulutech-web/goravel-workflow-vue)。
+
+### 演示
+![流程](../.vuepress/public/images/flow_link.png)
+
 ### 定义模板
 ![流程](../.vuepress/public/images/flow_dashboard.png)
 #### 模板定义
