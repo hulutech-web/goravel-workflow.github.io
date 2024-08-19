@@ -2,7 +2,7 @@
 <h3 id="系统安装" tabindex="-1"><a class="header-anchor" href="#系统安装"><span>系统安装</span></a></h3>
 <p>审批流框架基于最新的goravel进行适配，版本号为v1.1.14，请在安装完goravel后，在进行框架集成操作。goravel安装请访问<a href="https://www.goravel.dev/zh/" target="_blank" rel="noopener noreferrer">goravel官网</a>，使用文档：<a href="https://hulutech-web.github.io/goravel-workflow.github.io/" target="_blank" rel="noopener noreferrer">文档</a></p>
 <h4 id="_1-安装扩展" tabindex="-1"><a class="header-anchor" href="#_1-安装扩展"><span>1. 安装扩展</span></a></h4>
-<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">go</span> get  github<span class="token punctuation">.</span>com<span class="token operator">/</span>hulutech<span class="token operator">-</span>web<span class="token operator">/</span>goravel<span class="token operator">-</span>workflow</span>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go get  github.com/hulutech-web/goravel-workflow</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h5 id="_1-1-注册服务提供者-config-app-go" tabindex="-1"><a class="header-anchor" href="#_1-1-注册服务提供者-config-app-go"><span>1.1 注册服务提供者:config/app.go</span></a></h5>
 <div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">import</span>	<span class="token string">"github.com/hulutech-web/goravel-workflow"</span></span>
@@ -18,7 +18,7 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="发布资源" tabindex="-1"><a class="header-anchor" href="#发布资源"><span>发布资源</span></a></h3>
 <p>默认将发布2类资源，一是配置文件，而是数据表迁移</p>
-<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">go</span> run <span class="token punctuation">.</span> artisan vendor<span class="token punctuation">:</span>publish <span class="token operator">--</span><span class="token keyword">package</span><span class="token operator">=</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>hulutech<span class="token operator">-</span>web<span class="token operator">/</span>goravel<span class="token operator">-</span>workflow</span>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go run <span class="token builtin class-name">.</span> artisan vendor:publish <span class="token parameter variable">--package</span><span class="token operator">=</span>github.com/hulutech-web/goravel-workflow</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h4 id="_1-模型映射资源config-workflow-go" tabindex="-1"><a class="header-anchor" href="#_1-模型映射资源config-workflow-go"><span>1. 模型映射资源<code v-pre>config/workflow.go</code></span></a></h4>
 <div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line">config <span class="token operator">:=</span> facades<span class="token punctuation">.</span><span class="token function">Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
@@ -27,7 +27,9 @@
 <span class="line">		<span class="token string">"Emp"</span><span class="token punctuation">:</span>  <span class="token string">"User"</span><span class="token punctuation">,</span>       <span class="token comment">//员工关联应用中的模型</span></span>
 <span class="line">	<span class="token punctuation">}</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>解释：如果在集成前已经定义了有关用户与部门模型，那么请在该配置中进行修改，关联关系为1:1关系。</p>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container tip"><p class="custom-container-title">TIP</p>
+<p>解释：如果在集成前已经定义了有关用户与部门模型，那么请在该配置中进行修改，关联关系为1:1关系。</p>
+</div>
 <h4 id="_2-数据库迁移-goravel-database" tabindex="-1"><a class="header-anchor" href="#_2-数据库迁移-goravel-database"><span>2. 数据库迁移，goravel/database</span></a></h4>
 <p>流程框架将发布的迁移sql文件，seeder填充文件，发布到该路径下，请根据需要自行修改。</p>
 <h4 id="_3-运行数据库迁移" tabindex="-1"><a class="header-anchor" href="#_3-运行数据库迁移"><span>3. 运行数据库迁移</span></a></h4>

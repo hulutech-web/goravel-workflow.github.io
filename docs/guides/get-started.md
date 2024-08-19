@@ -1,11 +1,12 @@
 # 开始
+[![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fgithub.com%2Fhulutech-web%2Fgoravel-workflow?label=goravel-workflow&link=https%3A%2F%2Fgithub.com%2Fhulutech-web%2Fgoravel-workflow)](https://github.com/hulutech-web/goravel-workflow)
 
 golang语言开发， [goravel](https://goravel.dev "最易上手的golang语言web框架")框架审批流完整解决方案。
 
 ## 简介
 
-goravel-workflow为golang语言量身打造的一款继承扩展应用，非常适合开发审批流程场景，面向中小企业、组织、单位提供完善的审批工作流框架，同时提供丰富的hooks回调，满足个性化需求
-框架V2版本正在陆续开发中❤️
+goravel-workflow为golang语言量身打造的一款继承扩展应用，非常适合开发审批流程场景，面向中小企业、组织、单位提供完善的审批工作流框架，同时提供丰富的hooks回调，满足个性化需求  
+框架V2版本正在陆续开发中:tada:
 
 查看 [goravel-workflow](https://github.com/hulutech-web/goravel-workflow)获取更多详情。
 

@@ -9,6 +9,11 @@ export default defineUserConfig({
   base: "/goravel-workflow.github.io/", // 注意结尾的斜杠
   theme: defaultTheme({
     logo: "images/workflow.png",
+    badge: {
+      text: '', 
+      color: '', 
+      link: 'https://img.shields.io/badge/any_text-you_like-blue' 
+    },
     navbar: [
       {
         text: "首页",
@@ -42,6 +47,10 @@ export default defineUserConfig({
             text: "HOOKS",
             link: "/guides/hooks.html",
           },
+          {
+            text: "插件",
+            link: "/guides/plugins.html",
+          },
         ],
       },
       {
@@ -55,6 +64,5 @@ export default defineUserConfig({
       },
     ],
   }),
-
   bundler: viteBundler(),
 });

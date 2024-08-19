@@ -25,10 +25,10 @@ router.Get("emp/options", empCtrl.Options)
 router.Post("emp/bind", empCtrl.BindUser) //绑定用户
 ```
 ### 2. 流程模板&模板字段
-
+:::tip
 - 模板字段，模板字段提供了基于goravel的字段设计规则，包含文本，数字，文本域，下拉框，单选框，复选框，日期，文件
 - 字段验证，必填，字符串，邮箱，数字，日期，最小长度，最大长度，最大值，最小值，不等于，文件，图片，数字大于0
-  
+::: 
 ```go
 //模板控件
 templateformCtrl := controllers.NewTemplateformController()

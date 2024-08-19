@@ -7,7 +7,25 @@ export const routes = Object.fromEntries([
   ["/guides/get-started.html", { loader: () => import(/* webpackChunkName: "guides_get-started.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/get-started.html.js"), meta: {"title":"开始"} }],
   ["/guides/hooks.html", { loader: () => import(/* webpackChunkName: "guides_hooks.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/hooks.html.js"), meta: {"title":"框架hook回调"} }],
   ["/guides/models.html", { loader: () => import(/* webpackChunkName: "guides_models.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/models.html.js"), meta: {"title":"框架模型"} }],
+  ["/guides/plugins.html", { loader: () => import(/* webpackChunkName: "guides_plugins.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/plugins.html.js"), meta: {"title":""} }],
   ["/guides/steps.html", { loader: () => import(/* webpackChunkName: "guides_steps.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/steps.html.js"), meta: {"title":"使用步骤"} }],
   ["/guides/uses.html", { loader: () => import(/* webpackChunkName: "guides_uses.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/uses.html.js"), meta: {"title":"教程"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateRoutes) {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+  }
+  if (__VUE_HMR_RUNTIME__.updateRedirects) {
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ routes, redirects }) => {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  })
+}

@@ -19,10 +19,12 @@
 <span class="line">router<span class="token punctuation">.</span><span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">"emp/bind"</span><span class="token punctuation">,</span> empCtrl<span class="token punctuation">.</span>BindUser<span class="token punctuation">)</span> <span class="token comment">//绑定用户</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-流程模板-模板字段" tabindex="-1"><a class="header-anchor" href="#_2-流程模板-模板字段"><span>2. 流程模板&amp;模板字段</span></a></h3>
+<div class="custom-container tip"><p class="custom-container-title">TIP</p>
 <ul>
 <li>模板字段，模板字段提供了基于goravel的字段设计规则，包含文本，数字，文本域，下拉框，单选框，复选框，日期，文件</li>
 <li>字段验证，必填，字符串，邮箱，数字，日期，最小长度，最大长度，最大值，最小值，不等于，文件，图片，数字大于0</li>
 </ul>
+</div>
 <div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token comment">//模板控件</span></span>
 <span class="line">templateformCtrl <span class="token operator">:=</span> controllers<span class="token punctuation">.</span><span class="token function">NewTemplateformController</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line">router<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"template/{id}/templateform"</span><span class="token punctuation">,</span> templateformCtrl<span class="token punctuation">.</span>Index<span class="token punctuation">)</span></span>

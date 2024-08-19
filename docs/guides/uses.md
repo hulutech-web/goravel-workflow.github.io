@@ -5,7 +5,7 @@
 审批流框架基于最新的goravel进行适配，版本号为v1.1.14，请在安装完goravel后，在进行框架集成操作。goravel安装请访问[goravel官网](https://www.goravel.dev/zh/)，使用文档：[文档](https://hulutech-web.github.io/goravel-workflow.github.io/)
 
 #### 1. 安装扩展
-```go
+```shell
 go get  github.com/hulutech-web/goravel-workflow
 ```
 
@@ -26,7 +26,7 @@ go run .
 ```
 ### 发布资源
 默认将发布2类资源，一是配置文件，而是数据表迁移
-```go
+```shell
 go run . artisan vendor:publish --package=github.com/hulutech-web/goravel-workflow
 ```
 #### 1. 模型映射资源``config/workflow.go``
@@ -37,8 +37,9 @@ config := facades.Config()
 		"Emp":  "User",       //员工关联应用中的模型
 	})
 ```
+::: tip
 解释：如果在集成前已经定义了有关用户与部门模型，那么请在该配置中进行修改，关联关系为1:1关系。
-
+:::
 #### 2. 数据库迁移，goravel/database
 流程框架将发布的迁移sql文件，seeder填充文件，发布到该路径下，请根据需要自行修改。
 #### 3. 运行数据库迁移

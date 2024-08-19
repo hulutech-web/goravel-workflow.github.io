@@ -172,8 +172,9 @@ type Entry struct {
 	EnterProcess   Process     `gorm:"foreignKey:enter_process_id"` // 关联的进入步骤Process
 }
 ```
+:::tip
 流程实例:流程实例代表发起了一个流程，他表示在框架中新发起了某一个流程。工作流模型定义了流程发起时，每一个流程实例的相关信息，包含流程实例名称，流程实例发起人，流程实例状态，流程实例关联的流程，流程实例关联的流程步骤，流程实例关联的流程步骤变量等信息
-
+:::
 ### EntryData实例数据模型
 ```go
 type EntryData struct {

@@ -2,6 +2,8 @@
 home: true
 title: 首页
 heroImage: /images/workflow.png
+
+
 actions:
   - text: 开始
     link: /guides/get-started.html
