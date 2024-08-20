@@ -21,11 +21,54 @@
 
 ### 官方插件
 
-#### 🦁数量分配插件
+#### 🦁数量分配插件(官方)
 
-针对如上需求，框架提供了任务分配插件，通过artisan 命令进行发布资源，并自动集成到框架中
+针对如上需求，框架提供了任务分配插件，通过artisan 命令进行发布资源，并自动集成到框架中  
+官方定义了一个插件收集器，并新建了插件表和插件配置表，当注册官方插件后，2张表将自动生成
+- 内置官方插件
+``app_service_provider.go`` 中定义了官方插件
+```go
+import	"github.com/hulutech-web/goravel-workflow/services/workflow/official_plugins"
+
+op := official_plugins.NewDistributePlugin()
+cl := workflow.NewCollector([]workflow.Plugin{op})
+cl.RegisterPlugin("DistributePlugin")
+```
+- 插件作用
+插件是安装到某一个流程上，且在流程的某一个步骤上，由使用者去新建插件规则  
+例如将经费，分配给某些部门，每个部门的具体金额配置  
+- 具体效果
+当完成某一个审批之后，流程流转之前，运行官方提供的插件，插件名称必须为:"DistributePlugin"
 
 
-#### 🛠自定义插件
+#### 🦁API
+系统提供了有关插件的几个api方法
+```go
+//1、命令行新建一个插件
+//2、开发者通过设计，设计出该插件的一些选项和规则
+router.Post("api/plugin/product", distributeCtrl.Product)
+//3、为流程选择某些插件
+router.Post("api/flow/select_plugins", distributeCtrl.SelectPlugins)
+//4、获取系统中已有的插件
+router.Get("api/plugin/list", distributeCtrl.List)
+```
+
+#### 🛠插件开发
 
 框架提供了插件机制，允许用户开发者自定义插件，并集成到框架中，实现自定义功能。
+
+- artisan 命令
+```shell
+go run .artisan make:plugin
+```
+
+根据提示填写插件需要的相关配置，系统将根据插件信息新建插件记录
+- 注册插件
+``app_service_provider.go``中注册开发定义的插件
+
+```go
+myop := my_plugins.NewDistributePlugin()
+cl := workflow.NewCollector([]workflow.Plugin{myop})
+cl.RegisterPlugin("MyPlugin")
+```
+- 插件开发（待完善）
