@@ -39,10 +39,55 @@
 当2级部门将数据进行分配后，3级部门只能获得分配给自身的资金，而不能查看或者使用其他的资金</li>
 </ul>
 <h3 id="官方插件" tabindex="-1"><a class="header-anchor" href="#官方插件"><span>官方插件</span></a></h3>
-<h4 id="🦁数量分配插件" tabindex="-1"><a class="header-anchor" href="#🦁数量分配插件"><span>🦁数量分配插件</span></a></h4>
-<p>针对如上需求，框架提供了任务分配插件，通过artisan 命令进行发布资源，并自动集成到框架中</p>
-<h4 id="🛠自定义插件" tabindex="-1"><a class="header-anchor" href="#🛠自定义插件"><span>🛠自定义插件</span></a></h4>
+<h4 id="🦁数量分配插件-官方" tabindex="-1"><a class="header-anchor" href="#🦁数量分配插件-官方"><span>🦁数量分配插件(官方)</span></a></h4>
+<p>针对如上需求，框架提供了任务分配插件，通过artisan 命令进行发布资源，并自动集成到框架中<br>
+官方定义了一个插件收集器，并新建了插件表和插件配置表，当注册官方插件后，2张表将自动生成</p>
+<ul>
+<li>内置官方插件
+<code v-pre>app_service_provider.go</code> 中定义了官方插件</li>
+</ul>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token keyword">import</span>	<span class="token string">"github.com/hulutech-web/goravel-workflow/services/workflow/official_plugins"</span></span>
+<span class="line"></span>
+<span class="line">op <span class="token operator">:=</span> official_plugins<span class="token punctuation">.</span><span class="token function">NewDistributePlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">cl <span class="token operator">:=</span> workflow<span class="token punctuation">.</span><span class="token function">NewCollector</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>workflow<span class="token punctuation">.</span>Plugin<span class="token punctuation">{</span>op<span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">cl<span class="token punctuation">.</span><span class="token function">RegisterPlugin</span><span class="token punctuation">(</span><span class="token string">"DistributePlugin"</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>插件作用
+插件是安装到某一个流程上，且在流程的某一个步骤上，由使用者去新建插件规则<br>
+例如将经费，分配给某些部门，每个部门的具体金额配置</li>
+<li>具体效果
+当完成某一个审批之后，流程流转之前，运行官方提供的插件，插件名称必须为:&quot;DistributePlugin&quot;</li>
+</ul>
+<h4 id="🦁api" tabindex="-1"><a class="header-anchor" href="#🦁api"><span>🦁API</span></a></h4>
+<p>系统提供了有关插件的几个api方法</p>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line"><span class="token comment">//1、命令行新建一个插件</span></span>
+<span class="line"><span class="token comment">//2、开发者通过设计，设计出该插件的一些选项和规则</span></span>
+<span class="line">router<span class="token punctuation">.</span><span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">"api/plugin/product"</span><span class="token punctuation">,</span> distributeCtrl<span class="token punctuation">.</span>Product<span class="token punctuation">)</span></span>
+<span class="line"><span class="token comment">//3、为流程选择某些插件</span></span>
+<span class="line">router<span class="token punctuation">.</span><span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">"api/flow/select_plugins"</span><span class="token punctuation">,</span> distributeCtrl<span class="token punctuation">.</span>SelectPlugins<span class="token punctuation">)</span></span>
+<span class="line"><span class="token comment">//4、获取系统中已有的插件</span></span>
+<span class="line">router<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">"api/plugin/list"</span><span class="token punctuation">,</span> distributeCtrl<span class="token punctuation">.</span>List<span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="🛠插件开发" tabindex="-1"><a class="header-anchor" href="#🛠插件开发"><span>🛠插件开发</span></a></h4>
 <p>框架提供了插件机制，允许用户开发者自定义插件，并集成到框架中，实现自定义功能。</p>
+<ul>
+<li>artisan 命令</li>
+</ul>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go run .artisan make:plugin</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>根据提示填写插件需要的相关配置，系统将根据插件信息新建插件记录</p>
+<ul>
+<li>注册插件
+<code v-pre>app_service_provider.go</code>中注册开发定义的插件</li>
+</ul>
+<div class="language-go line-numbers-mode" data-highlighter="prismjs" data-ext="go" data-title="go"><pre v-pre><code><span class="line">myop <span class="token operator">:=</span> my_plugins<span class="token punctuation">.</span><span class="token function">NewDistributePlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">cl <span class="token operator">:=</span> workflow<span class="token punctuation">.</span><span class="token function">NewCollector</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>workflow<span class="token punctuation">.</span>Plugin<span class="token punctuation">{</span>myop<span class="token punctuation">}</span><span class="token punctuation">)</span></span>
+<span class="line">cl<span class="token punctuation">.</span><span class="token function">RegisterPlugin</span><span class="token punctuation">(</span><span class="token string">"MyPlugin"</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>插件开发（待完善）</li>
+</ul>
 </div></template>
 
 
