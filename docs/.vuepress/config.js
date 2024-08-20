@@ -51,6 +51,10 @@ export default defineUserConfig({
             text: "插件",
             link: "/guides/plugins.html",
           },
+          {
+            text: "附件功能",
+            link: "/guides/preview.html",
+          },
         ],
       },
       {

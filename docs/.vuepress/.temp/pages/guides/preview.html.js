@@ -1,0 +1,3 @@
+import comp from "/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/preview.html.vue"
+const data = JSON.parse("{\"path\":\"/guides/preview.html\",\"title\":\"\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[{\"level\":2,\"title\":\"附件功能\",\"slug\":\"附件功能\",\"link\":\"#附件功能\",\"children\":[{\"level\":3,\"title\":\"内容预览\",\"slug\":\"内容预览\",\"link\":\"#内容预览\",\"children\":[]},{\"level\":3,\"title\":\"PDF归档\",\"slug\":\"pdf归档\",\"link\":\"#pdf归档\",\"children\":[]}]}],\"git\":{\"updatedTime\":null,\"contributors\":[]},\"filePathRelative\":\"guides/preview.md\"}")
+export { comp, data }
