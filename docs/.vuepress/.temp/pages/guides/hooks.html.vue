@@ -2,8 +2,8 @@
 <p>框架核心workflow<a href="https://github.com/hulutech-web/goravel-workflow/blob/master/services/workflow/workflow.go" target="_blank" rel="noopener noreferrer">核心</a>是一个工厂单例，使用NewBaseWorkflow创建。</p>
 <h3 id="介绍" tabindex="-1"><a class="header-anchor" href="#介绍"><span>介绍</span></a></h3>
 <p>采用go的组合方式，实现2个接口即可，即可获得框架提供的能力，开发者可自行进行实现后续逻辑，如发送审核成功后通知消息，审核失败后的后续处理等等。<br>
-接口1-通知发起人：NotifyNextAuditor<br>
-接口2-通知下一审批人：NotifySendOne</p>
+接口1-通知发起人：NotifySendOne<br>
+接口2-通知下一审批人：NotifyNextAuditor</p>
 <h3 id="集成于使用" tabindex="-1"><a class="header-anchor" href="#集成于使用"><span>集成于使用</span></a></h3>
 <h4 id="模型关联" tabindex="-1"><a class="header-anchor" href="#模型关联"><span>模型关联</span></a></h4>
 <ul>

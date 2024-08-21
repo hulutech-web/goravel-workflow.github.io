@@ -22,11 +22,10 @@ features:
     details: 内置多层级部门、员工，部门经理，部门主管角色，使用时直接模型一对一关联即可快速集成到应用
   - title: 页面友好
     details: 图形化工作流设计，支持拖拽，连线，审批条件，快速构建审批工作流场景
-  - title: 多场景使用
-    details: 公文审批、请假审批、资金申请等多场景
   - title: Hooks
     details: 内置多个hooks，高度自由，个性化十足
-
+  - title: 插件
+    details: 内置官方插件，并支持开发者二次开发插件
 footer: MIT Licensed | Copyright © 2024-present hulu-tech Community
 ---
 

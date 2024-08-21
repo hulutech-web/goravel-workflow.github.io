@@ -2,7 +2,8 @@
 <p><a href="https://github.com/hulutech-web/goravel-workflow" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/https%3A%2F%2Fgithub.com%2Fhulutech-web%2Fgoravel-workflow?label=goravel-workflow&amp;link=https%3A%2F%2Fgithub.com%2Fhulutech-web%2Fgoravel-workflow" alt="Static Badge"></a></p>
 <p>golang语言开发， <a href="https://goravel.dev" title="最易上手的golang语言web框架" target="_blank" rel="noopener noreferrer">goravel</a>框架审批流完整解决方案。</p>
 <h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介"><span>简介</span></a></h2>
-<p>goravel-workflow为golang语言量身打造的一款继承扩展应用，非常适合开发审批流程场景，面向中小企业、组织、单位提供完善的审批工作流框架，同时提供丰富的hooks回调，满足个性化需求<br>
+<p>goravel-workflow由golang语言开发，为goravel框架量身打造的一款审批流扩展应用。<br>
+面向中小企业、组织、单位提供完善的审批工作流框架，同时提供的hooks，且提供插件开发，满足个性化需求<br>
 框架V2版本正在陆续开发中🎉</p>
 <p>查看 <a href="https://github.com/hulutech-web/goravel-workflow" target="_blank" rel="noopener noreferrer">goravel-workflow</a>获取更多详情。</p>
 <h2 id="前端" tabindex="-1"><a class="header-anchor" href="#前端"><span>前端</span></a></h2>
@@ -35,8 +36,8 @@
 </ul>
 <h2 id="消息通知" tabindex="-1"><a class="header-anchor" href="#消息通知"><span>消息通知</span></a></h2>
 <ul>
-<li>提供各节点审批前的hook函数，可自定义消息通知</li>
-<li>提供审批节点结束后的hook函数，可自定义消息通知</li>
+<li>提供节点审批<code v-pre>同意</code>的hook函数（含流程完结），可自定义消息通知</li>
+<li>提供审批<code v-pre>驳回</code>后的hook函数，可自定义消息通知</li>
 </ul>
 <h2 id="安装" tabindex="-1"><a class="header-anchor" href="#安装"><span>安装</span></a></h2>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre v-pre><code><span class="line">go get github.com/hulutech-web/goravel-workflow</span>

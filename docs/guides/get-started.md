@@ -5,7 +5,8 @@ golang语言开发， [goravel](https://goravel.dev "最易上手的golang语言
 
 ## 简介
 
-goravel-workflow为golang语言量身打造的一款继承扩展应用，非常适合开发审批流程场景，面向中小企业、组织、单位提供完善的审批工作流框架，同时提供丰富的hooks回调，满足个性化需求  
+goravel-workflow由golang语言开发，为goravel框架量身打造的一款审批流扩展应用。  
+面向中小企业、组织、单位提供完善的审批工作流框架，同时提供的hooks，且提供插件开发，满足个性化需求  
 框架V2版本正在陆续开发中:tada:
 
 查看 [goravel-workflow](https://github.com/hulutech-web/goravel-workflow)获取更多详情。
@@ -42,8 +43,8 @@ goravel-workflow前端采用vue开发，前端代码托管在 [https://github.co
 - 审批节点结束，结束当前，或者进入子流程
 
 ## 消息通知
-- 提供各节点审批前的hook函数，可自定义消息通知
-- 提供审批节点结束后的hook函数，可自定义消息通知
+- 提供节点审批``同意``的hook函数（含流程完结），可自定义消息通知
+- 提供审批``驳回``后的hook函数，可自定义消息通知
 
 ## 安装
 
