@@ -1,4 +1,4 @@
-<template><div><h2 id="附件功能" tabindex="-1"><a class="header-anchor" href="#附件功能"><span>附件功能</span></a></h2>
+<template><div><h2 id="附件功能-开发中" tabindex="-1"><a class="header-anchor" href="#附件功能-开发中"><span>附件功能（开发中）</span></a></h2>
 <p>很多情况下，当一个流程结束后，流程的所有信息将会作为重要的凭据，需要保存下来，以便后续的查阅。因此，我们提供了内容预览和PDF归档的功能，方便用户将流程内容保存为PDF文件。</p>
 <h3 id="内容预览" tabindex="-1"><a class="header-anchor" href="#内容预览"><span>内容预览</span></a></h3>
 <p>内容预览功能允许用户在流程结束后，查看流程的所有信息。用户可以通过点击流程的“预览”按钮，打开内容预览窗口，查看流程的所有信息。
