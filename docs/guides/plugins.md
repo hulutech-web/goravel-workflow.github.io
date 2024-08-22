@@ -76,4 +76,7 @@ myop := my_plugins.NewDistributePlugin()
 cl := workflow.NewCollector([]workflow.Plugin{myop})
 cl.RegisterPlugin("MyPlugin")
 ```
-- 插件开发（待完善）
+- 插件开发（官方）
+插件功能允许开发者在某一个流程的某一个步骤上，对提交表单中的某一个数据进行二次分配，例如经费的分配，分配到指定的部门上。  
+
+![分配设计](../.vuepress/public/images/plugin.png)

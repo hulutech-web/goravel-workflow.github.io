@@ -93,8 +93,10 @@ goravel-workflow 提供了插件机制，允许用户开发者自定义插件，
 <span class="line">cl<span class="token punctuation">.</span><span class="token function">RegisterPlugin</span><span class="token punctuation">(</span><span class="token string">"MyPlugin"</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>插件开发（待完善）</li>
+<li>插件开发（官方）
+插件功能允许开发者在某一个流程的某一个步骤上，对提交表单中的某一个数据进行二次分配，例如经费的分配，分配到指定的部门上。</li>
 </ul>
+<p><img src="@source/.vuepress/public/images/plugin.png" alt="分配设计"></p>
 </div></template>
 
 
