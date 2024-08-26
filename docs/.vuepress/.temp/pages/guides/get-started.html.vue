@@ -3,9 +3,11 @@
 <p>golang语言开发， <a href="https://goravel.dev" title="最易上手的golang语言web框架" target="_blank" rel="noopener noreferrer">goravel</a>框架审批流完整解决方案。</p>
 <h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介"><span>简介</span></a></h2>
 <p>goravel-workflow由golang语言开发，为goravel框架量身打造的一款审批流扩展应用。<br>
-面向中小企业、组织、单位提供完善的审批工作流框架，同时提供的hooks，且提供插件开发，满足个性化需求<br>
+面向中小企业、组织、单位提供完善的审批工作流框架，同时提供的hooks，且提供插件开发，满足个性化需求。</p>
+<p>【示意图】</p>
+<p><img src="@source/.vuepress/public/images/flow_preview.png" alt="流程图预览"></p>
+<p>查看 <a href="https://github.com/hulutech-web/goravel-workflow" target="_blank" rel="noopener noreferrer">goravel-workflow</a>获取更多详情。<br>
 框架V2版本正在陆续开发中🎉</p>
-<p>查看 <a href="https://github.com/hulutech-web/goravel-workflow" target="_blank" rel="noopener noreferrer">goravel-workflow</a>获取更多详情。</p>
 <h2 id="前端" tabindex="-1"><a class="header-anchor" href="#前端"><span>前端</span></a></h2>
 <p>goravel-workflow前端采用vue开发，前端代码托管在 <a href="https://github.com/hulutech-web/goravel-workflow-vue" target="_blank" rel="noopener noreferrer">https://github.com/hulutech-web/goravel-workflow-vue</a></p>
 <h2 id="详情" tabindex="-1"><a class="header-anchor" href="#详情"><span>详情</span></a></h2>
