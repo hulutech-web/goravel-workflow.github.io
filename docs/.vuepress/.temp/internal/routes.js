@@ -10,6 +10,7 @@ export const routes = Object.fromEntries([
   ["/guides/plugins.html", { loader: () => import(/* webpackChunkName: "guides_plugins.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/plugins.html.js"), meta: {"title":""} }],
   ["/guides/preview.html", { loader: () => import(/* webpackChunkName: "guides_preview.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/preview.html.js"), meta: {"title":""} }],
   ["/guides/steps.html", { loader: () => import(/* webpackChunkName: "guides_steps.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/steps.html.js"), meta: {"title":"使用步骤"} }],
+  ["/guides/tools.html", { loader: () => import(/* webpackChunkName: "guides_tools.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/tools.html.js"), meta: {"title":""} }],
   ["/guides/uses.html", { loader: () => import(/* webpackChunkName: "guides_uses.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/guides/uses.html.js"), meta: {"title":"教程"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/yh/code/Sites/goland/workflow/goravel-workflow-vuepress/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);

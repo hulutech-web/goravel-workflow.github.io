@@ -62,9 +62,17 @@ export default defineUserConfig({
         link: "https://github.com/hulutech-web/goravel-workflow",
       },
       {
-        text: "友情链接",
-        // 配置跳转链接
-        link: "https://github.com/hulutech-web/http_result",
+        text: "工具软件",
+        children:[
+          {
+            text: "官方流程",
+            link: "http://workflow.xiaohongpao.top/#/auth/login",
+          },
+          {
+            text: "工具集",
+            link: "/guides/tools.html",
+          },
+        ]
       },
     ],
   }),
