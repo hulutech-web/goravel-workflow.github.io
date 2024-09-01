@@ -15,6 +15,12 @@
 <li>支持抖音，快手，西瓜视频等各知名视频网站。</li>
 </ul>
 <h5 id="🎉短视频时代-你值得拥有" tabindex="-1"><a class="header-anchor" href="#🎉短视频时代-你值得拥有"><span>🎉短视频时代，你值得拥有！！！</span></a></h5>
+<h4 id="桌面古诗文app" tabindex="-1"><a class="header-anchor" href="#桌面古诗文app"><span><a href="https://github.com/hulutech-web/poetry" target="_blank" rel="noopener noreferrer">桌面古诗文APP</a></span></a></h4>
+<p><img src="@source/.vuepress/public/images/poetry.png" alt="桌面古诗文"></p>
+<ul>
+<li>弘扬传统文化。</li>
+<li>支持一键复制，电脑桌面从此格局提升。</li>
+</ul>
 </div></template>
 
 
