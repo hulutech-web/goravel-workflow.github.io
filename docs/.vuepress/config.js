@@ -4,6 +4,7 @@ import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
   lang: "zh-CN",
+  contributors: false,
   title: "goravel-workflow",
   description: "基于goravel的workflow审批流框架",
   base: "/goravel-workflow.github.io/", // 注意结尾的斜杠

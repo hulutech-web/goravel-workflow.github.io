@@ -2,7 +2,7 @@
 <p>效率工具集旨在提升日常工作效率，不限于软件开发相关的内容，其中包含：</p>
 <ul>
 <li>官方软件</li>
-<li>作者推荐软件</li>
+<li>开源推荐</li>
 <li>官方扩展包</li>
 <li>开发笔记</li>
 <li>....</li>
@@ -20,6 +20,13 @@
 <ul>
 <li>弘扬传统文化。</li>
 <li>支持一键复制，电脑桌面从此格局提升。</li>
+</ul>
+<h3 id="二、开源推荐" tabindex="-1"><a class="header-anchor" href="#二、开源推荐"><span>二、开源推荐</span></a></h3>
+<h4 id="炫酷桌面时钟" tabindex="-1"><a class="header-anchor" href="#炫酷桌面时钟"><span><a href="https://github.com/pfinal-nc/wails_pf" target="_blank" rel="noopener noreferrer">炫酷桌面时钟</a></span></a></h4>
+<p><img src="@source/.vuepress/public/images/desktop-clock.png" alt="炫酷时钟"></p>
+<ul>
+<li>可以下载源码学习和二次修改</li>
+<li>桌面更加炫酷，更有逼格</li>
 </ul>
 </div></template>
 
