@@ -26,6 +26,6 @@ features:
     details: 内置多个hooks，高度自由，个性化十足
   - title: 插件
     details: 内置官方插件，并支持开发者二次开发插件
-footer: MIT Licensed | Copyright © 2024-present hulu-tech Community
+footer: MIT Licensed | Copyright © 2024-present hulutech Community
 ---
 
